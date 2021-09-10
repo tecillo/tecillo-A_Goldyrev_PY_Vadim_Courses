@@ -67,11 +67,10 @@ a = int(input())
 b = int(30)
 if a < b:
     print('Вы вели число', a, 'которое меньше числа', b)
-if a == b:
+elif a == b:
     print('Вы вели число', a, 'которое равно числу', b)
-if a > b:
+else:
     print('Вы вели число', a, 'которое больше числа', b, '\n')
-
 
 # 8) Сделать скрипт используя функцию input().
 #     1. Функция должна на вход принимать целое число.
@@ -84,9 +83,9 @@ import random
 randomNumber = random.randint(1, 100)
 if yourNumber < randomNumber:
     print('Вы вели число', yourNumber, 'которое меньше сгенерированного числа', randomNumber)
-if yourNumber == randomNumber:
+elif yourNumber == randomNumber:
     print('Вы вели число', yourNumber, 'которое сгенерированному числу', randomNumber)
-if yourNumber > randomNumber:
+else:
     print('Вы вели число', yourNumber, 'которое сгенерированного числа', randomNumber, '\n')
 
 
@@ -96,20 +95,23 @@ if yourNumber > randomNumber:
 #     3. Выводить должна "Вы вели число = (введённое число) которое (меньше/больше/равно и меньше/больше/равно)
 #        сгенерированному числу"
 
+
 print('Введите целое число')
-yourSecondNumber = int(input())
+yourN = int(input())
 import random
-randomNumberOne = random.randint(1, 100)
-randomNumberTwo = random.randint(1, 100)
-if yourSecondNumber < randomNumberOne:
-    print('Вы вели число', yourSecondNumber, 'которое меньше сгенерированного числа', randomNumberOne, end=' ')
-if yourNumber == randomNumberOne:
-    print('Вы вели число', yourSecondNumber, 'которое сгенерированному числу', randomNumberOne, end=' ')
-if yourNumber > randomNumberOne:
-    print('Вы вели число', yourSecondNumber, 'которое сгенерированного числа', randomNumberOne, end=' ')
-if yourSecondNumber < randomNumberTwo:
-    print('и меньше сгенерированного числа', randomNumberTwo)
-if yourSecondNumber == randomNumberTwo:
-    print('и равно сгенерированному числу', randomNumberTwo)
-if yourSecondNumber > randomNumberTwo:
-    print('и больше сгенерированного числа', randomNumberTwo)
+randomNo = random.randint(1, 100)
+randomNt = random.randint(1, 100)
+answer = 'Вы вели число ' + str(yourN) + ', которое'
+if yourN < randomNo:
+    answer = answer + ' меньше сгенерированного числа ' + str(randomNo)
+elif yourN == randomNo:
+    answer = answer + ' равно сгенерированному числу ' + str(randomNo)
+else:
+    answer = answer + ' больше сгенерированного числа ' + str(randomNo)
+if yourN < randomNt:
+    answer = answer + ' и меньше сгенерированного числа ' + str(randomNt)
+elif yourN == randomNt:
+    answer = answer + ' и равно сгенерированному числу ' + str(randomNt)
+else:
+    answer = answer + ' и больше сгенерированного числа ' + str(randomNt)
+print(answer)
